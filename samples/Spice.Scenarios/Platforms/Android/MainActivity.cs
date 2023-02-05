@@ -14,6 +14,7 @@ public class MainActivity : SpiceActivity
 	{
 		base.OnCreate(savedInstanceState);
 
-		SetContentView(new App());
+		var app = new AppBuilder().Build();
+		SetContentView(app);
 	}
 }

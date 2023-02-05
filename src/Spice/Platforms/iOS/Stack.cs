@@ -1,27 +1,27 @@
 ﻿namespace Spice;
 
-public partial class StackView
+public partial class Stack
 {
 	/// <summary>
 	/// Returns stackView.NativeView
 	/// </summary>
 	/// <param name="stackView">The Spice.StackView</param>
-	public static implicit operator UIStackView(StackView stackView) => stackView.NativeView;
+	public static implicit operator UIStackView(Stack stackView) => stackView.NativeView;
 
 	/// <summary>
 	/// A parent view for laying out child controls in a row. Defaults to Orientation=Vertical.
 	/// Android -> Android.Widget.LinearLayout
 	/// iOS -> UIKit.UIStackView
 	/// </summary>
-	public StackView() : this(v => new SpiceStackView((StackView)v) { AutoresizingMask = UIViewAutoresizing.None, Alignment = UIStackViewAlignment.Center, Axis = UILayoutConstraintAxis.Vertical }) { }
+	public Stack() : this(v => new SpiceStackView((Stack)v) { AutoresizingMask = UIViewAutoresizing.None, Alignment = UIStackViewAlignment.Center, Axis = UILayoutConstraintAxis.Vertical }) { }
 
 	/// <inheritdoc />
 	/// <param name="frame">Pass the underlying view a frame</param>
-	public StackView(CGRect frame) : this(v => new SpiceStackView((StackView)v, frame) { AutoresizingMask = UIViewAutoresizing.None, Alignment = UIStackViewAlignment.Center, Axis = UILayoutConstraintAxis.Vertical }) { }
+	public Stack(CGRect frame) : this(v => new SpiceStackView((Stack)v, frame) { AutoresizingMask = UIViewAutoresizing.None, Alignment = UIStackViewAlignment.Center, Axis = UILayoutConstraintAxis.Vertical }) { }
 
 	/// <inheritdoc />
 	/// <param name="creator">Subclasses can pass in a Func to create a UIView</param>
-	protected StackView(Func<View, UIView> creator) : base(creator) { }
+	protected Stack(Func<View, UIView> creator) : base(creator) { }
 
 	/// <summary>
 	/// The underlying UIStackView
@@ -52,11 +52,11 @@ public partial class StackView
 
 	class SpiceStackView : UIStackView
 	{
-		readonly StackView _parent;
+		readonly Stack _parent;
 
-		public SpiceStackView(StackView parent) => _parent = parent;
+		public SpiceStackView(Stack parent) => _parent = parent;
 
-		public SpiceStackView(StackView parent, CGRect frame) : base(frame) => _parent = parent;
+		public SpiceStackView(Stack parent, CGRect frame) : base(frame) => _parent = parent;
 
 		public override CGSize SizeThatFits(CGSize size)
 		{

@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 
+
 namespace Spice;
 
 public partial class Application
@@ -7,7 +8,8 @@ public partial class Application
 	/// <summary>
 	/// The root "view" of a Spice application. Set Main to a single view.
 	/// </summary>
-	public Application() { }
+	public Application() 
+	{ }
 
 	/// <inheritdoc />
 	/// <param name="context">Option to pass the desired Context, otherwise Platform.Context is used</param>
@@ -19,6 +21,7 @@ public partial class Application
 
 	partial void OnMainChanging(View? value)
 	{
+		
 		if (_main != null)
 		{
 			NativeView.RemoveView(_main);

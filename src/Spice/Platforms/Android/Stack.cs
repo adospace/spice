@@ -2,13 +2,13 @@
 
 namespace Spice;
 
-public partial class StackView
+public partial class Stack
 {
 	/// <summary>
 	/// Returns stackView.NativeView
 	/// </summary>
 	/// <param name="stackView">The Spice.StackView</param>
-	public static implicit operator LinearLayout(StackView stackView) => stackView.NativeView;
+	public static implicit operator LinearLayout(Stack stackView) => stackView.NativeView;
 
 	static LinearLayout Create(Context context)
 	{
@@ -25,20 +25,20 @@ public partial class StackView
 	/// Android -> Android.Widget.LinearLayout
 	/// iOS -> UIKit.UIStackView
 	/// </summary>
-	public StackView() : this(Platform.Context, Create) { }
+	public Stack() : this(Platform.Context, Create) { }
 
 	/// <inheritdoc />
 	/// <param name="context">Option to pass the desired Context, otherwise Platform.Context is used</param>
-	public StackView(Context context) : this(context, Create) { }
+	public Stack(Context context) : this(context, Create) { }
 
 	/// <inheritdoc />
 	/// <param name="creator">Subclasses can pass in a Func to create a Android.Views.View</param>
-	protected StackView(Func<Context, Android.Views.View> creator) : this(Platform.Context, creator) { }
+	protected Stack(Func<Context, Android.Views.View> creator) : this(Platform.Context, creator) { }
 
 	/// <inheritdoc />
 	/// <param name="context">Option to pass the desired Context, otherwise Platform.Context is used</param>
 	/// <param name="creator">Subclasses can pass in a Func to create a Android.Views.View</param>
-	protected StackView(Context context, Func<Context, Android.Views.View> creator) : base(context, creator) { }
+	protected Stack(Context context, Func<Context, Android.Views.View> creator) : base(context, creator) { }
 
 	/// <summary>
 	/// The underlying Android.Widget.LinearLayout

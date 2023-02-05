@@ -13,7 +13,8 @@ public class AppDelegate : SpiceAppDelegate
 		ArgumentNullException.ThrowIfNull(Window);
 
 		var vc = new UIViewController();
-		vc.View!.AddSubview(new App());
+		var app = new AppBuilder().Build();
+		vc.View!.AddSubview(app);
 		Window.RootViewController = vc;
 		Window.MakeKeyAndVisible();
 

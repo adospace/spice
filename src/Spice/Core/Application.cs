@@ -1,3 +1,5 @@
+
+
 namespace Spice;
 
 /// <summary>
@@ -10,4 +12,7 @@ public partial class Application : View
 	/// </summary>
 	[ObservableProperty]
 	View? _main;
+
+
+	
 }

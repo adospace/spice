@@ -5,11 +5,6 @@
 /// Android -> Android.Widget.LinearLayout
 /// iOS -> UIKit.UIStackView
 /// </summary>
-public partial class StackView : View
+public abstract partial class Layout : View
 {
-	/// <summary>
-	/// Set to specify if layout is vertical or horizontal. Defaults to vertical.
-	/// </summary>
-	[ObservableProperty]
-	Orientation _orientation;
 }

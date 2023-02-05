@@ -39,6 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Spice.Reactor\Spice.Reactor.csproj" />
         <ProjectReference Include="..\..\src\Spice\Spice.csproj" />
     </ItemGroup>
 
